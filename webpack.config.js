@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: './dist/',
+    publicPath: 'dist/',
     filename: 'build.js'
   },
   plugins: [
@@ -37,11 +37,8 @@ module.exports = {
         exclude: [/node_modules/,/js/]
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader?limit=8192&name=./asset/img/[hash].[ext]',
       },
       {
         test: /\.css$/,
@@ -49,7 +46,7 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)\w*/,
-        loader: 'file-loader'
+        loader: 'file-loader?name=./asset/font/[name].[ext]'
       }
     ]
   },

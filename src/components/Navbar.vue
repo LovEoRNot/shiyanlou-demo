@@ -48,8 +48,8 @@
             </ul>
           </div>      
         </div>   
-        <div class="ph-navbar">
-          <div class="navbar-header">
+        <div class="ph-navbar navbar-fixed-top">
+          <div class="navbar-header" style="background: #fff">
             <a class="navbar-brand index-navbar-brand" href="/">
               <img src="../assets/logo.png">
             </a>
@@ -60,7 +60,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <div class="collapse navbar-collapse" id="item-list" aria-expanded="false">
+          <div class="collapse navbar-collapse" id="item-list" aria-expanded="false" style="max-height: 480px;">
             <ul class="nav navbar-nav">
               <li><a href="#">路径</a></li>
               <li><a href="#">比赛</a></li>
@@ -76,7 +76,7 @@
       </div>
     </nav>
   </div>
-  <nav class="navbar navbar-default navbar-fixed-top home-header" style="display: none;">    
+  <nav class="navbar navbar-default navbar-fixed-top home-header" v-show="showFixed">    
     <div class="container" style="position: relative;">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
@@ -89,7 +89,7 @@
           <img src="../assets/logo.png">
         </a>
       </div>
-      <div class="navbar-collapse collapse" id="header-navbar-collapse" aria-expanded="false" style="height: 2px;">
+      <div class="navbar-collapse collapse" id="header-navbar-collapse" aria-expanded="false">
         <ul class="nav navbar-nav">
           <li class=""><a href="###">课程</a></li>
           <li class=""><a href="###">路径</a></li>
@@ -116,6 +116,26 @@
 <script>
 import ListItem from './list-items/List-items.vue'
 export default {
+  data () {
+    return {
+      showFixed: false
+    }
+  },
+  mounted () {
+    var vm = this;
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 150) {
+        vm.showFixed = true;
+      } else {
+        vm.showFixed = false;
+      }
+    };
+    if(document.documentElement.clientWidth < 768) {
+      vm.showFixed = false;
+      window.onscroll = null;
+    } 
+    
+  },
   components: {
     ListItem
   }
@@ -128,7 +148,7 @@ $nbBrandH: 70px;
 $color: #08bf91;
 .index-nav {
   position: relative;
-  height: $headerHeight ;
+  z-index: 1024;
 }
 .index-page-header {
   position: relative;
@@ -178,6 +198,8 @@ $color: #08bf91;
   }
   #item-list {
     border-width: 0;
+    margin-top: 10px;
+    background: #ffffff;
     li{
       a {
         padding-top: 20px;
