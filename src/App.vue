@@ -1,40 +1,22 @@
 <template>
-  <div class="index">
-    <Navbar></Navbar>     
-    <Banner></Banner>   
-    <Spcourse></Spcourse>   
-    <CoursePartOne></CoursePartOne>
-    <CoursePartTwo></CoursePartTwo>
-    <Execise></Execise>
-    <FooterBar></FooterBar>
-  </div>
+<div>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
-import Banner from './components/Banner.vue'
-import Spcourse from './components/Spcourse.vue'
-import CoursePartOne from './components/CoursePartOne.vue'
-import CoursePartTwo from './components/CoursePartTwo.vue'
-import FooterBar from './components/FooterBar.vue'
-import Execise from './components/Exercise.vue'
+import Index from './components/Index.vue'
+import { router } from './routes/routes'
 export default {
+  router,
   components: {
-    Navbar,
-    Banner,
-    Spcourse,
-    CoursePartOne,
-    CoursePartTwo,
-    Execise,
-    FooterBar
+    Index
   }
 }
 </script>
 
+
 <style lang="scss">
-body {
-  overflow-x: hidden;
-}
 .index {
   background: #f8f8f8;
   z-index: -100;

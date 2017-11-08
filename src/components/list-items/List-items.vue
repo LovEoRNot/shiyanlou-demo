@@ -13,7 +13,7 @@
             </div>
             <p>课程推荐</p>
             <div class="course-name">
-              <p v-for="(cname, key) in item.ListCategory.courseName" :key="key"><a href="#">{{cname}}</a></p>
+              <p v-for="(cname, key) in item.ListCategory.courseName" :key="key"><a href="##">{{cname}}</a></p>
             </div>
           </div>
         </div>
