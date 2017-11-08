@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div>
   <router-view></router-view>
 </div>
@@ -7,10 +8,27 @@
 <script>
 import Index from './components/Index.vue'
 import { router } from './routes/routes'
+=======
+  <div class="index">
+    <Navbar></Navbar>     
+    <Banner></Banner>         
+  </div>
+</template>
+
+<script>
+
+import Navbar from './components/Navbar.vue'
+import Banner from './components/Banner.vue'
+>>>>>>> parent of 571e007... 新增了大量组件
 export default {
   router,
   components: {
+<<<<<<< HEAD
     Index
+=======
+    Navbar,
+    Banner
+>>>>>>> parent of 571e007... 新增了大量组件
   }
 }
 </script>
@@ -19,12 +37,5 @@ export default {
 <style lang="scss">
 .index {
   background: #f8f8f8;
-  z-index: -100;
-}
-.course-section {
-  padding-top: 30px;
-}
-.no-padding {
-  padding: 0;
 }
 </style>
