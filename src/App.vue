@@ -19,6 +19,9 @@ import { router } from './routes/routes'
 
 import Navbar from './components/Navbar.vue'
 import Banner from './components/Banner.vue'
+<<<<<<< HEAD
+>>>>>>> parent of 571e007... 新增了大量组件
+=======
 >>>>>>> parent of 571e007... 新增了大量组件
 export default {
   router,
@@ -28,6 +31,9 @@ export default {
 =======
     Navbar,
     Banner
+<<<<<<< HEAD
+>>>>>>> parent of 571e007... 新增了大量组件
+=======
 >>>>>>> parent of 571e007... 新增了大量组件
   }
 }

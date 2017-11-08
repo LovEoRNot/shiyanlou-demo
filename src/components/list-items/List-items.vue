@@ -31,8 +31,11 @@
             <p>课程推荐</p>
             <div class="course-name">
 <<<<<<< HEAD
+<<<<<<< HEAD
               <p v-for="(cname, key) in item.ListCategory.courseName" :key="key"><a href="##">{{cname}}</a></p>
 =======
+=======
+>>>>>>> parent of 571e007... 新增了大量组件
               <p>
                 <a href="#">Python打造漏洞扫描器</a>
               </p>
@@ -45,6 +48,9 @@
               <p>
                 <a href="#">MyBatis 框架基础入门</a>
               </p>
+<<<<<<< HEAD
+>>>>>>> parent of 571e007... 新增了大量组件
+=======
 >>>>>>> parent of 571e007... 新增了大量组件
             </div>
           </div>
